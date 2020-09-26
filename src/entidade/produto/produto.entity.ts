@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Double, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Double, Entity, ManyToOne, PrimaryColumn } from "typeorm";
 import { Pedido } from "../pedido/pedido.entity";
 
 
@@ -22,7 +22,7 @@ export class Produto extends BaseEntity{
     @Column({name: 'estoque' , type:'bigint' , length: '80'})
     estoque: number;
 
-    @Column({name: 'datavalidade' , type: 'date' , length: '80' })
+    @CreateDateColumn({name: 'datavalidade' , type: 'date' , length: '80' })
     datavalidade: Date;
 
     @Column({name: 'unidademedida' , type: 'int' , length: '80'})

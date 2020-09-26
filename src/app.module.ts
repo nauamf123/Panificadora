@@ -27,9 +27,7 @@ import { UserService } from './entidade/users/user.service';
       password: '7887',
       database: 'panificadora',
       entities: [
-        User,
-        Produto,
-        Pedido
+        __dirname + "/../entities/*.entity{.ts,.js}"
      
       ],
       synchronize: true,

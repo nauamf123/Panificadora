@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Double, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Double, Entity, OneToMany, PrimaryColumn } from "typeorm";
 import { Produto } from "../produto/produto.entity";
 import { User } from "../users/user.entity";
 
@@ -14,10 +14,10 @@ export class Pedido extends BaseEntity {
     @PrimaryColumn({name: 'id' , type: 'int' , length: '80' })
     id:number;
 
-    @Column({name: 'data' , type: 'date' , length: '80' })
+    @CreateDateColumn({name: 'data' , type: 'date' , length: '80' })
     data:Date;
 
-    @Column({name: 'dataentrega' , type: 'date' , length: '80' })
+    @CreateDateColumn({name: 'dataentrega' , type: 'date' , length: '80' })
     dataentrega:Date;
 
     @Column({name: 'transportadora' , type: 'varchar' , length: '80' })

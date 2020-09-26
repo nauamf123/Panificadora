@@ -15,10 +15,10 @@ export class EmailService {
     this
       .mailerService
       .sendMail({
-        to: 'nauamffgt123@gmail.com', // list of receivers
-        from: 'smtp.mailtrap.io', // sender address
-        subject: 'Produto Pedido', // Subject line
-        text: 'Seu produto foi envidado com sucesso', // plaintext body
+        to: 'nauamffgt123@gmail.com', 
+        from: 'smtp.mailtrap.io', 
+        subject: 'Produto Pedido', 
+        text: 'Seu produto foi envidado com sucesso', 
       })
       .then(() => {})
       .catch(() => {});

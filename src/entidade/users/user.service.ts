@@ -38,7 +38,20 @@ export class UserService {
     }
 
 
+
+    
+    async register(data: UserDTO) {
+        const { nome } = data;
+        let user = await this.userRepository.findOne({ where: { nome } });
+        if (user) {
+          throw new HttpException('User already exists', HttpStatus.BAD_REQUEST);
+        }
+        user = await this.userRepository.create(data);
+        await this.userRepository.save(user);
+        return user.nome;
+      }
    
 
 
+      
 }
