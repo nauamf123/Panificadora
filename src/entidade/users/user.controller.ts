@@ -1,5 +1,6 @@
 import { Body, Controller, Param } from "@nestjs/common";
 import { Delete, Get, Post, Put } from "@nestjs/common/decorators/http/request-mapping.decorator";
+import { NOMEM } from "dns";
 import { UserDTO } from "./user.dto";
 import { UserService } from "./user.service";
 
@@ -34,4 +35,8 @@ export class UserController {
         return this.userService.destroy(id);
     }
 
+    @Post('auth/register')
+    register(@Body() data: UserDTO) {
+      return this.userService.register(data);
+  }
 }

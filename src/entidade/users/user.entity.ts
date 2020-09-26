@@ -6,6 +6,9 @@ import { Pedido } from "../pedido/pedido.entity";
 
 @Entity("user")
 export class User  extends BaseEntity {
+    toResponseObject() {
+        throw new Error("Method not implemented.");
+    }
 
     @PrimaryColumn({name: 'id' , type: 'int' , length: '80' })
     id:number;
